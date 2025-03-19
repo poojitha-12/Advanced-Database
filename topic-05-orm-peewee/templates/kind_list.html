@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <style>
+            /* Add some spacing for better readability */
+            h3, table, a {
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Kind List Section -->
+        <h3>Kind List:</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Food</th>
+                <th>Noise</th>
+                <th>Actions</th>
+            </tr>
+            {% for kind in kinds %}
+            <tr>
+                <td>{{ kind.id }}</td>
+                <td>{{ kind.kind_name }}</td>
+                <td>{{ kind.food }}</td>
+                <td>{{ kind.noise }}</td>
+                <td>
+                    <a href="/kind/update/{{ kind.id }}">Update</a> | 
+                    <a href="/kind/delete/{{ kind.id }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <hr/>
+        <a href="/add_kind">Create New Kind</a>
+        <hr/>
+        <a href="/">Back to Pet List</a>
+    </body>
+</html>

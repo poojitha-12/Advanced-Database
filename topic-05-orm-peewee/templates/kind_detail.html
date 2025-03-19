@@ -1,0 +1,31 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Kind Details</h1>
+        <hr/>
+        <p><strong>ID:</strong> {{ kind.id }}</p>
+        <p><strong>Name:</strong> {{ kind.kind_name }}</p>
+        <p><strong>Food:</strong> {{ kind.food }}</p>
+        <p><strong>Noise:</strong> {{ kind.noise }}</p>
+        <hr/>
+        <h2>Pets of This Kind</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Owner</th>
+            </tr>
+            {% for pet in pets %}
+            <tr>
+                <td>{{ pet.id }}</td>
+                <td>{{ pet.name }}</td>
+                <td>{{ pet.age }}</td>
+                <td>{{ pet.owner }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <hr/>
+        <a href="/">Back to Home</a>
+    </body>
+</html>

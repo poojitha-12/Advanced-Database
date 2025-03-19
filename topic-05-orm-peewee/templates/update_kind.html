@@ -1,0 +1,16 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Update Kind</h1>
+        <hr/>
+        <form action="/kind/update/{{ kind.id }}" method="post">
+            <p>Kind Name: <input name="kind_name" value="{{ kind.kind_name }}" required /></p>
+            <p>Food: <input name="food" value="{{ kind.food }}" required /></p>
+            <p>Noise: <input name="noise" value="{{ kind.noise }}" required /></p>
+            <hr/>
+            <button type="submit">Update</button>
+            <a href="/">Cancel</a>
+            <hr/>
+        </form>
+    </body>
+</html>

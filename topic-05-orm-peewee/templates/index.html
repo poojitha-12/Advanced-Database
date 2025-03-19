@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <style>
+            /* Add some spacing for better readability */
+            h3, table, a {
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Pet List Section -->
+        <h3>List:</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Owner</th>
+                <th>Kind</th>
+
+            </tr>
+            {% for pet in pets %}
+            <tr>
+                <td>{{ pet.id }}</td>
+                <td>{{ pet.name }}</td>
+                <td>{{ pet.age }}</td>
+                <td>{{ pet.owner }}</td>
+                <td>{{ pet.kind.kind_name }}</td>
+                <td>
+                    <a href="/pet/update/{{ pet.id }}">Update</a> | 
+                    <a href="/pet/delete/{{ pet.id }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <hr/>
+        <a href="/add_pet">Create New Pet</a>
+        <hr/>
+        <!-- Link to Kind List Page -->
+        <a href="/kind_list">Pet Kinds</a>
+    </body>
+</html>
